@@ -1,0 +1,108 @@
+.loginForm{
+    position: absolute;
+    width: 420px;
+    height: 450px;
+    background: slateblue;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    translate: 400;
+}
+
+.loginForm .loginFormContainer{
+    justify-items: left;
+    padding: 40px;
+    text-align: left;
+}
+
+.loginForm.active .loginFormContainer.loginForm{
+    transition: none;
+    translate: -400px;
+}
+
+.loginForm.active .loginFormContainer.register{
+    transition: translate .18s ease;
+    translate: 0;
+}
+
+.txtLogin{
+    font-size: 36px;
+    text-align: center;
+}
+
+form .inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0 ;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    border: 2px solid rgba(255, 255, 255, .1); 
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+
+.inputBox input::placeholder {
+    color: white;
+}
+
+.inputBox .userIcon{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    translate: 0 -50%;
+    font-size: 16px;
+}
+
+.checkRemember{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: -15px 0 15px;
+}
+
+label input{
+    accent-color: white;
+    margin-right: 4px;
+}
+
+.remember_me{
+    color: white;
+    text-decoration: none;
+}
+
+.btnLogin{
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 45px;
+    font-size: 20px;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-weight: 700;
+}
+
+.registerLink{
+    font-style: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.linkedRegister{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.linkedRegister:hover {
+    text-decoration: underline;
+}
