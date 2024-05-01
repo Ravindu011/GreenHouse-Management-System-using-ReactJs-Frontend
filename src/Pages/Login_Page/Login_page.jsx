@@ -2,6 +2,8 @@ import './login_page.css'
 import React from 'react'
 import { FaUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
+import { useState } from 'react';
+import Register from '../Register_Page/Register';
 
 const Login_page = () => {
 
@@ -11,13 +13,17 @@ const Login_page = () => {
     //     setAction(' active');
     // };
 
+
     
 
   return (
-    <div className="loginForm">
+    <div className="">
+        <div className="loginForm">
+            
 
         <div className="loginFormContainer">
             <form action="">
+                
                     <h1 className='txtLogin'>Login</h1>
                     <div className="inputBox">
                         <input type="text" placeholder='UserName' />
@@ -42,11 +48,16 @@ const Login_page = () => {
                         <p>Don't have an account? <a href='#' className='linkedRegister'>Register</a></p>
                     </div>
 
+                    
+
+
             </form>
         </div>
 
 
+        </div>
     </div>
+    
   )
 }
 

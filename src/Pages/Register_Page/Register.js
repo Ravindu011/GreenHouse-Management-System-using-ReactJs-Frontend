@@ -8,6 +8,8 @@ import { FaLocationDot } from "react-icons/fa6";
 
 export default function Register() {
 
+    
+
 
   return (
     <div className='RegistrationForm'>
@@ -16,32 +18,32 @@ export default function Register() {
                     <h1 className='txtLogin'>Register</h1>
 
                     <div className="inputBox">
-                        <input type="text" placeholder='UserName' />
+                        <input type="text" placeholder='UserName' required/>
                         <FaUser className='userIcon'/>
                     </div>
 
                     <div className="inputBox">
-                        <input type="email" placeholder='Email Address' />
+                        <input type="email" placeholder='Email Address' required/>
                         <FaEnvelope className='userIcon'/>
                     </div>
 
                     <div className="inputBox">
-                        <input type="text" placeholder='Phone No' />
+                        <input type="text" placeholder='Phone No' required/>
                         <FaPhone className='userIcon'/>
                     </div>
 
                     <div className="inputBox">
-                        <input type="text" placeholder='Location' />
+                        <input type="text" placeholder='Location' required/>
                         <FaLocationDot className='userIcon'/>
                     </div>
 
                     <div className="inputBox">
-                        <input type="password" placeholder='Password' />
+                        <input type="password" placeholder='Password' required/>
                         <FaLock className='userIcon'/>
                     </div>
 
                     <div className="checkRemember">
-                        <label><input type="checkbox"/>I agree to the terms & conditions</label>
+                        <label><input type="checkbox"required/>I agree to the terms & conditions</label>
                     </div>
 
                     <button className='btnRegister'>

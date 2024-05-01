@@ -1,7 +1,6 @@
 .RegistrationForm{
     position: absolute;
     width: 420px;
-    height: 600px;
     border-radius: 10px;
     translate: 400px;
     margin-left: 50px;
@@ -9,6 +8,9 @@
     justify-content: center;
     background: slateblue;
 } 
+.registerFormContainer{
+    margin: 15px;
+}
 
 .RegistrationForm .loginFormContainer{
     justify-items: left;
