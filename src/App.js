@@ -1,14 +1,19 @@
-import './App.css';
-import Home from './Pages/HomePage/Home';
-import Login_page from './Pages/Login_Page/Login_page';
-import Register from './Pages/Register_Page/Register';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginPage from './Pages/Login_Page/LoginPage';
+import Dashboars from './Pages/dashboard/Dashboars';
 
-function App() {
+
+const App = () => {
   return (
-    <div className='App'>
-      <Home/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/dashboard" element={<Dashboars/>} />
+
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
