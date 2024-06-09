@@ -8,7 +8,10 @@ export default function Dashboars() {
   return (
     <div>
         <NavigationBar/>
+
         <AddProduct/>
+        <br />
+        <h1><center>Registered Plants</center> </h1>
         <PlantCards/>
     </div>
   )
