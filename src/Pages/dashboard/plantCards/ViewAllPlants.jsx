@@ -36,6 +36,19 @@ export default function PlantCards() {
     }
   };
 
+  const handleMakeOngoing = async (id) => {
+    try {
+      await axios.put(`http://localhost:8080/setOngoing/${id}`, { status: 'Ongoing' });
+      setPlants((prevPlants) =>
+        prevPlants.map((plant) =>
+          plant.pid === id ? { ...plant, status: 'Ongoing' } : plant
+        )
+      );
+    } catch (error) {
+      console.error('Failed to update plant status:', error);
+    }
+  };
+
   return (
     <div className="container mt-4">
       <div className="row">
@@ -49,11 +62,18 @@ export default function PlantCards() {
                 <p className="card-text"><strong>Days to Grow:</strong> {plant.daysToGrow}</p>
                 <p className="card-text"><strong>Status:</strong> {plant.status}</p>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger me-2"
                   onClick={() => handleDelete(plant.pid)}
                   disabled={plant.status === 'Ongoing'}
                 >
                   Delete
+                </button>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleMakeOngoing(plant.pid)}
+                  disabled={plant.status === 'Ongoing'}
+                >
+                  Make Ongoing
                 </button>
               </div>
             </div>
