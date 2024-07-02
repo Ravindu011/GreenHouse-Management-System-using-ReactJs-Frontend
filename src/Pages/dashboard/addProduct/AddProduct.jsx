@@ -42,7 +42,7 @@ export default function AddProduct() {
       });
       setValue('');
       setError('');
-      
+
     }
   }
 
@@ -50,7 +50,7 @@ export default function AddProduct() {
     <div className='container'>
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow">
-          <h2 className='text-center m-4'>Register a user</h2>
+          <h2 className='text-center m-4'>Register a Plant</h2>
           <form onSubmit={(e) => onSubmit(e)}>
             <div className="mb-3">
               <label htmlFor="pName" className='form-label'>
