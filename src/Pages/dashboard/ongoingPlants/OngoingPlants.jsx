@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import NavigationBar from '../../Nav/NavigationBar';
 
 export default function OngoingPlants() {
   const [plants, setPlants] = useState([]);
@@ -74,7 +75,7 @@ export default function OngoingPlants() {
   }
 
   return (
-    <div className="container mt-4">
+      <div className="container mt-4">
       <div className="row">
         {plants.map((plant) => (
           <div key={plant.pid} className="col-md-12">
@@ -96,5 +97,7 @@ export default function OngoingPlants() {
         ))}
       </div>
     </div>
+
+    
   );
 }

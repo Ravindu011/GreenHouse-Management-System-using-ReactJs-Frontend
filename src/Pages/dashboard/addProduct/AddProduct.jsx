@@ -76,16 +76,7 @@ export default function AddProduct() {
               </label>
               <input type="number" className="form-control" placeholder='How many time to grow (days) ' name='daysToGrow' value={daysToGrow} onChange={(e) => onInputChange(e)} required />
             </div>
-            <div className="mb-3">
-                <label htmlFor="status" className='form-label'>
-                    Status
-                </label>
-                <select className="form-select" name='status' value={status} onChange={(e) => onInputChange(e)} required>
-                    <option value="">Select an option</option>
-                    <option value="Ongoing">Ongoing</option>
-                    <option value="Standby">Standby</option>
-                </select>
-            </div>
+            
 
             <button className="btn btn-outline-primary" type='submit'>Submit</button>
             <a href="/" className="btn btn-outline-danger mx-2" type='button'>Cancel</a>

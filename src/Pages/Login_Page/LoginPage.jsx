@@ -29,7 +29,7 @@ export default function LoginPage() {
       try {
         const response = await axios.post("http://localhost:8080/login", user);
         if (response.data == "Successful login") { // Assuming the server sends a success property
-          navigate("/dashboard"); // Navigate to the Dashboard
+          navigate("/AdminDashboard"); // Navigate to the Dashboard
         } else {
           setError('Invalid email or password');
         }
@@ -42,29 +42,66 @@ export default function LoginPage() {
   return (
     
 
-    <div>
-      <div className="login">
-        <h1>Login</h1>
-        <form method="post" onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            required="required"
-            value={email}
-            onChange={onInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required="required"
-            value={password}
-            onChange={onInputChange}
-          />
-          <button type="submit" className="btn btn-primary btn-block btn-large">Login</button>
-        </form>
-        {error && <p>{error}</p>}
+    <div className='bg'>
+      {/* <div class="bg-image"><img src="images/plant.png" alt=""></div> */}
+    
+    <div class="bg-text">
+
+            <div className='logo'>
+                {/* <img class="logo" src="images/A+logo.png" alt="Greenhouse Management System"> */}
+            </div>
+
+            <h2 class="mt-4">Admin Login</h2>
+
+
+            <form method="post" onSubmit={onSubmit}>
+                
+                <div class="form-group">
+
+                    <label for="email">Email</label>
+
+                    <input
+                    class="form-control"
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    required="required"
+                    value={email}
+                    onChange={onInputChange}
+                    />
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Password</label>
+
+                    <input
+                    class="form-control"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    required="required"
+                    value={password}
+                    onChange={onInputChange}
+                    />
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Login</button>
+                    
+                </div>
+
+                <div class="form-group">
+                    <a href="#" class="text-gray-600">Login as Admin?</a>
+                </div>
+            </form>
+
+
+          <div class="text-danger mt-2" id="error-message" >
+           {error && <p>{error}</p>} 
+          </div>
+          
       </div>
     </div>
   );

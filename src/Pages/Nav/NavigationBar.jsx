@@ -22,23 +22,18 @@ export default function NavigationBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
+            <Nav.Link href="AdminDashboard">Dashboard</Nav.Link>
+            <Nav.Link href="ViewAllPlants">View Plants</Nav.Link>
+            <Nav.Link href="ViewAllPlants">Add Plant</Nav.Link>
+            <NavDropdown title="User Control" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="RegisterUser">Register New User</NavDropdown.Item>
+              <NavDropdown.Item href="viewUsers">View Users</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#" disabled>
-              Link
+              System Guild
             </Nav.Link>
           </Nav>
-          
         </Navbar.Collapse>
       </Container>
     </Navbar>

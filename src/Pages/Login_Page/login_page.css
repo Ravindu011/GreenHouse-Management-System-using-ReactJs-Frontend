@@ -1,0 +1,56 @@
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeef1;
+} */
+
+.bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #eaeef1;
+    background-image: url("C:\Users\user\Documents\GitHub\GreenHouse-Management-System-using-ReactJs-Frontend\src\Pages\Images\img.jpg");
+
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    align-items: center;
+    background-size: cover;
+
+    background-image: url("C:\Users\user\Documents\GitHub\GreenHouse-Management-System-using-ReactJs-Frontend\src\Pages\Images\A+logo.png");
+
+}
+
+/* .bg-image {
+    background-image: url('images/plant.png'); 
+    filter: blur(4px);
+    -webkit-filter: blur(4px);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+} */
+
+.bg-text {
+    background-color: rgba(7, 68, 160, 0.5);
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 100%;
+    max-width: 400px;
+    padding: 50px;
+    text-align: left;
+}
