@@ -12,7 +12,7 @@ import './navigationBar.css'
 export default function NavigationBar() {
   return (
     <>
-         <Navbar expand="lg" className="bg-body-tertiary">
+         {/* <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
         <Navbar.Brand href="#">GreenHouse Admin</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -22,26 +22,60 @@ export default function NavigationBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
+            <Nav.Link href="AdminDashboard">Dashboard</Nav.Link>
+            <Nav.Link href="ViewAllPlants">View Plants</Nav.Link>
+            <Nav.Link href="addPlant">Add Plant</Nav.Link>
+            <NavDropdown title="User Control" id="navbarScrollingDropdown">
+              <NavDropdown.Item href="RegisterUser">Register New User</NavDropdown.Item>
+              <NavDropdown.Item href="viewUsers">View Users</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
           
+          </Nav>
         </Navbar.Collapse>
       </Container>
-    </Navbar>
+    </Navbar> */}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <div className="logo"></div>
+                {/* <img src="images/A+logo.png" alt="" width="40" height="40" > */}
+            </a>
+            <a class="navbar-brand" href="#">Greenhouse Admin</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="AdminDashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ViewAllPlants">View Plants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addPlant">Add Plant</a>
+                    </li>
+                    {/* <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                            User Control
+                        </a> */}
+                        <NavDropdown title="User Control" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                          <NavDropdown.Item class="dropdown-item" href="RegisterUser">Register New User</NavDropdown.Item>
+                          <NavDropdown.Item class="dropdown-item" href="viewUsers">View Users</NavDropdown.Item>
+                          </li>
+                            
+                        </NavDropdown>
+                    {/* </li> */}
+                </ul>
+            </div>
+
+            <a class="navbar-brand" href="/">Log Out</a>
+            
+        </div>
+    </nav>
+
     </>
 
   )

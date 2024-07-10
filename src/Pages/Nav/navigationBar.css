@@ -1,1 +1,43 @@
+.logo {
+    width: 50px;
+    height: 50px;
+    background-image: url("C:\Users\user\Documents\GitHub\GreenHouse-Management-System-using-ReactJs-Frontend\src\Pages\Images\A+logo.png");
+    margin-bottom: 10px;
+    
+}
+
+.navbar-nav {
+    margin: auto;
+    height: 40%;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255) !important;
+    font-weight:500;
+}
+
+.nav-link:hover {
+    background-color: #218838;
+    color: #fff !important;
+}
+
+.dropdown-menu {
+    background-color: #22bb33;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.dropdown-item{
+    color: #fff;
+}
+
+.dropdown-item:hover{
+    background-color: #218838;
+}
+
+.navbar-brand{
+    margin-right: 3%;
+}
 

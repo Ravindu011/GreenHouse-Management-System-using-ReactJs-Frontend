@@ -1,0 +1,45 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 6px 10px  #00000042;
+    transition: transform 0.3s ease-in-out;
+    background-color: #000080;
+    
+  }
+
+  .card:hover {
+  transform: scale(1.05);
+}
+
+.card-body{
+  /* background-color: #000080;  */
+  color: #333333;
+}
+
+.card-title{
+  font-size: 40px;
+  text-align: center;
+  color:  #9afe2e;
+}
+
+.card-text {
+  color: #ffffff;
+}
+
+
+.btn-primary:hover {
+  background-color: #4285f4;
+  border-color: #4285f4;
+}
+
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+.bg-ongoing {
+    background-color: rgb(0, 125, 23);
+  }
+  

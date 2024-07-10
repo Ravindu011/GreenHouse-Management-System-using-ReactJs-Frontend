@@ -1,4 +1,9 @@
-body{
+
+body {
+    background: linear-gradient(360deg, #ffffff,#ffffff, #ffffff);
     margin: 0;
     padding: 0;
-}
+    height: 90vh; /* Ensures gradient covers entire viewport height */
+
+  }
+  
