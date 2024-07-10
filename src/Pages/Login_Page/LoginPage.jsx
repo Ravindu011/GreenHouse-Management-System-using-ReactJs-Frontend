@@ -88,12 +88,13 @@ export default function LoginPage() {
                 </div>
                 
                 <div class="form-group">
+                  <br />
                     <button type="submit" class="btn btn-success">Login</button>
                     
                 </div>
 
                 <div class="form-group">
-                    <a href="#" class="text-gray-600">Login as Admin?</a>
+                    <a href="/" class="text-gray-600">Login as User?</a>
                 </div>
             </form>
 

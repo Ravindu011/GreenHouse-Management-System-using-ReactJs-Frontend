@@ -15,6 +15,19 @@ export default function ViewAllUsers() {
       });
   }, []);
 
+  const deleteUser = async (id) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this user?");
+    if (confirmDelete) {
+      try {
+        await axios.delete(`http://localhost:8080/deleteuser/${id}`);
+        // Filter out the deleted user from the users state
+        setUsers(users.filter(user => user.id !== id));
+      } catch (error) {
+        console.error('There was an error deleting the user!', error);
+      }
+    }
+  };
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -27,6 +40,7 @@ export default function ViewAllUsers() {
                 <th>Username</th>
                 <th>Email</th>
                 <th>Type</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -36,6 +50,14 @@ export default function ViewAllUsers() {
                   <td>{user.username}</td>
                   <td>{user.email}</td>
                   <td>{user.type}</td>
+                  <td>
+                    <button 
+                      className="btn btn-danger" 
+                      onClick={() => deleteUser(user.id)}
+                    >
+                      Delete Account
+                    </button>
+                  </td>
                 </tr>
               ))}
             </tbody>

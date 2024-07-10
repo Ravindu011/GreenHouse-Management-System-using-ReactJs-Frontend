@@ -44,7 +44,7 @@ export default function RegisterUser() {
         type: "",
         username: ""
       });
-      navigate('/');
+      navigate('/viewUsers');
     }
   };
 

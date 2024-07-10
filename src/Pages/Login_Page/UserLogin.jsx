@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './login_page.css';
+import './login_page.css'; // Import your CSS file for styling
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-export default function UserLogin() {
+const UserLogin = () => {
   let navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -26,9 +26,9 @@ export default function UserLogin() {
       setError('Enter the Value!');
     } else {
       try {
-        const response = await axios.post("http://localhost:8080/userlogin", user); 
-        if (response.data === "Successful User Login") { 
-          navigate("/UserDashboard"); 
+        const response = await axios.post("http://localhost:8080/userlogin", user);
+        if (response.data === "Successful User Login") {
+          navigate("/UserDashboard");
         } else {
           setError('Invalid email or password');
         }
@@ -39,30 +39,51 @@ export default function UserLogin() {
   };
 
   return (
-    <div>
-      <div className="login">
-        <h1>User Login</h1>
+    <div className='bg'>
+      <div className="bg-text">
+        <div className='logo'>
+          {/* <img className="logo" src="images/A+logo.png" alt="AgroPlus Logo" /> */}
+        </div>
+        <h2 className="mt-4">User Login</h2>
         <form method="post" onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="email"
-            placeholder="Email"
-            required="required"
-            value={email}
-            onChange={onInputChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            required="required"
-            value={password}
-            onChange={onInputChange}
-          />
-          <button type="submit" className="btn btn-primary btn-block btn-large">Login</button>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              className="form-control"
+              type="text"
+              name="email"
+              placeholder="Email"
+              required
+              value={email}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              className="form-control"
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              value={password}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="form-group">
+            <br />
+            <button type="submit" className="btn btn-success">Login</button>
+          </div>
+          <div className="form-group">
+            <a href="/AdminLogin" className="text-gray-600">Login as Admin?</a>
+          </div>
         </form>
-        {error && <p>{error}</p>}
+        <div className="text-danger mt-2" id="error-message">
+          {error && <p>{error}</p>}
+        </div>
       </div>
     </div>
   );
-}
+};
+
+export default UserLogin;

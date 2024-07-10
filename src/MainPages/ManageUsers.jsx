@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationBar from '../../Nav/NavigationBar'
+import NavigationBar from '../Pages/Nav/NavigationBar'
 import ViewAllUsersAndManage from './ViewAllUsersAndManage'
 
 export default function ManageUsers() {

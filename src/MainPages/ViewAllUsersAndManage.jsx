@@ -1,6 +1,6 @@
 import React from 'react'
-import NavigationBar from '../../Nav/NavigationBar'
-import ViewAllUsers from '../userComponents/ViewAllUsers'
+import NavigationBar from '../Pages/Nav/NavigationBar'
+import ViewAllUsers from '../Pages/dashboard/userComponents/ViewAllUsers'
 
 export default function ViewAllUsersAndManage() {
   return (
