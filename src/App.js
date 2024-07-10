@@ -1,18 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './Pages/Login_Page/LoginPage';
-import Dashboars from './Pages/dashboard/Dashboars';
 import AdminDashboard from './MainPages/AdminDashboard';
-import PlantCards from './Pages/dashboard/plantCards/ViewAllPlants';
-import NavigationBar from './Pages/Nav/NavigationBar';
-import RegisterUser from './Pages/Register_Page/RegisterUser';
 import UserLogin from './Pages/Login_Page/UserLogin';
 import UserDashboard from './MainPages/UserDashboard';
 import ViewPlants from './MainPages/ViewPlants';
 import NewUserReg from './MainPages/NewUserReg';
 import ViewAllUsersAndManage from './MainPages/ViewAllUsersAndManage';
 import AddPlant from './MainPages/AddPlant';
-import AddProduct from './Pages/dashboard/addProduct/AddProduct';
+import UserAddPlants from './MainPages/UserPart/UserAddPlants';
+import UserViewPlants from './MainPages/UserPart/UserViewPlants';
 
 
 const App = () => {
@@ -26,11 +23,9 @@ const App = () => {
         <Route path="UserDashboard" element={<UserDashboard />} />
         <Route path="AdminLogin" element={<LoginPage />} />
         <Route path="viewUsers" element={<ViewAllUsersAndManage />} />
-        <Route path="addPlant" element={<AddPlant />} />
-
-
-
-        
+        <Route path="addPlant" element={<AddPlant />} /> 
+        <Route path="UserAddPlants" element={<UserAddPlants />} />
+        <Route path="UserViewPlants" element={<UserViewPlants />} />
       </Routes>
     </BrowserRouter>
   );

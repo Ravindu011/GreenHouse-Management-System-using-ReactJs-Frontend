@@ -1,0 +1,23 @@
+.left-image {
+    background: url('C:\Users\user\Documents\GitHub\GreenHouse-Management-System-using-ReactJs-Frontend\src\Pages\Images\pexels-sohail-nachiti-807598.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    /* padding-left: 55%; */
+  }
+
+  .form-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .form-content {
+    width: 50%;
+  }
+  .subbtn{
+    margin-top: 50px;
+  }
+  .regtitle{
+    color: green;
+  }
