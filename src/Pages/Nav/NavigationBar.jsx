@@ -41,7 +41,7 @@ export default function NavigationBar() {
               <div className="logo"></div>
                 {/* <img src="images/A+logo.png" alt="" width="40" height="40" > */}
             </a>
-            <a class="navbar-brand" href="#">Greenhouse Admin</a>
+            <a class="navbar-brand" href="#"><strong>Agro</strong><sup>+</sup></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
