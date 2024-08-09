@@ -24,12 +24,12 @@ export default function OngoingPlants() {
   }, []);
 
   const handleStop = async (id) => {
+
     try {
-      await axios.put(`http://localhost:8080/setStandby/${id}`);
+      // await axios.put(`http://localhost:8080/setStandby/${id}`);
       await axios.put(`http://localhost:8080/moveToHistory/${id}`);
       await axios.delete(`http://localhost:8080/removeFromOngoing/${id}`);
-
-
+      // await axios.delete(`http://localhost:8080/deleteFromOnTemp/${id}`);
 
 
       setPlants((prevPlants) => prevPlants.map((plant) => 

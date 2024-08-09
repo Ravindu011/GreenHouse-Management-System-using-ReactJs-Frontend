@@ -1,2 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 
+label{
+    color: aqua;
+}
