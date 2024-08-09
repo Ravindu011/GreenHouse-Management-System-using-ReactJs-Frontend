@@ -38,25 +38,25 @@ export default function PlantCards() {
   };
 
   const handleMakeOngoing = async (id) => {
+    // await axios.put(`http://localhost:8080/storePlantTemp/${id}`);
+
     try {
+
+      // Update plant status to "Ongoing"
       await axios.put(`http://localhost:8080/setOngoing/${id}`, { status: 'Ongoing' });
+  
+      // Move plant data to another table
+  
+      // Update the plants state to reflect the status change
       setPlants((prevPlants) =>
         prevPlants.map((plant) =>
           plant.pid === id ? { ...plant, status: 'Ongoing' } : plant
         )
       );
     } catch (error) {
-      console.error('Failed to update plant status:', error);
+      console.error('Failed to update plant status or move data:', error);
     }
   };
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
 
   return (
     <div className="container mt-4">
