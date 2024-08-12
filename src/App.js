@@ -10,6 +10,9 @@ import ViewAllUsersAndManage from './MainPages/ViewAllUsersAndManage';
 import AddPlant from './MainPages/AddPlant';
 import UserAddPlants from './MainPages/UserPart/UserAddPlants';
 import UserViewPlants from './MainPages/UserPart/UserViewPlants';
+import { UserContext } from './UserContext';
+import UserActivities from './MainPages/ActivityView';
+
 
 
 const App = () => {
@@ -26,6 +29,8 @@ const App = () => {
         <Route path="addPlant" element={<AddPlant />} /> 
         <Route path="UserAddPlants" element={<UserAddPlants />} />
         <Route path="UserViewPlants" element={<UserViewPlants />} />
+        <Route path="userAct" element={<UserActivities/>} />
+
       </Routes>
     </BrowserRouter>
   );

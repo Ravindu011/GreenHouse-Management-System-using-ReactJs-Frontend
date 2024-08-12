@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ViewPlants.css';
+import { logActivity } from '../../../LogActivity';
+import { UserContext } from '../../../UserContext';
 
 export default function PlantCards() {
   const [plants, setPlants] = useState([]);
@@ -31,7 +33,9 @@ export default function PlantCards() {
   
     try {
       await axios.delete(`http://localhost:8080/removePlant/${id}`);
+      logActivity('Admin','Deleted Plant');
       setPlants((prevPlants) => prevPlants.filter((plant) => plant.pid !== id));
+      
     } catch (error) {
       console.error('Failed to delete plant:', error);
     }

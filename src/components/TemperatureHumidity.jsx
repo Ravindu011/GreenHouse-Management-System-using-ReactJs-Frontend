@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import GaugeChart from 'react-gauge-chart';
 import { database } from '../firebaseConfig';
 import { ref, onValue } from 'firebase/database';
+import './ledControl.css';
+
 
 const TemperatureHumidity = () => {
   const [temperature, setTemperature] = useState(null);
@@ -31,11 +33,11 @@ const TemperatureHumidity = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Real-time Temperature and Humidity</h1>
+    <div className='ccontainer'>
+      <center><h3>Current Temperature & Humidity</h3></center>
+      <hr />
       <div style={{ display: 'flex', justifyContent: 'space-around' }}>
         <div className='TempCard'>
-          <h2>Temperature</h2>
           {temperature !== null ? (
             <GaugeChart
               id="temperature-gauge"
@@ -44,13 +46,16 @@ const TemperatureHumidity = () => {
               textColor="#000000"
               needleColor="#345243"
               colors={['#5FD8FF', '#FFC371']}
+              formatTextValue={() => `${temperature}`}
+
             />
+            
           ) : (
             <p>Loading...</p>
           )}
+          <center><h3>Temperature</h3></center>
         </div>
         <div className='TempCard'>
-          <h2>Humidity</h2>
           {humidity !== null ? (
             <GaugeChart
               id="humidity-gauge"
@@ -59,10 +64,14 @@ const TemperatureHumidity = () => {
               textColor="#000000"
               needleColor="#345243"
               colors={['#5F6AFF', '#71FFB8']}
+              formatTextValue={() => `${humidity}`}
+
             />
           ) : (
             <p>Loading...</p>
           )}
+          <center><h3>Humidity</h3></center>
+
         </div>
       </div>
     </div>

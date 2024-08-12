@@ -14,7 +14,7 @@ button {
   }
   
   button.on {
-    background-color: rgb(88, 50, 255);
+    background-color: #319bff;
   }
   
   button.off {
@@ -33,4 +33,46 @@ button {
   input {
     margin-right: 10px;
   }
-  
+
+  .ccontainer{
+    margin:20px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 6px 10px  #00000042;
+
+  }
+
+  .boolcontainer{
+    box-shadow: 0 6px 10px  #00000042;
+    flex: 6;
+    height: 200px;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+
+  }
+  .boolcontainer2{
+    box-shadow: 0 6px 10px  #00000042;
+    flex: 3;
+    height: 200px;
+    margin: 20px;
+    border-radius: 20px;
+    padding: 20px;
+
+  }
+  .boolcontainer3{
+    flex: 3;
+    height: 200px;
+    margin: 20px;
+    border-radius: 50px;
+
+  }
+
+  .maincontainer{
+    display: flex;
+    flex-direction: row;
+  }
+  .custom-button1{
+    border-radius: 50px;
+  }

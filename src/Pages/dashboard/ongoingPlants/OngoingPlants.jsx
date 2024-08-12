@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './onPlant.css'
 import NavigationBar from '../../Nav/NavigationBar';
 
 export default function OngoingPlants() {
@@ -79,15 +80,16 @@ export default function OngoingPlants() {
       <div className="row">
         {plants.map((plant) => (
           <div key={plant.pid} className="col-md-12">
-            <div className="card mb-4">
+            <div className="cardOn mb-4">
               <div className="card-body d-flex justify-content-between align-items-center">
                 <div>
-                  <h2 className="card-title" style={{ color: plant.status === 'Ongoing' ? 'green' : 'black' }}>{plant.pName}</h2>
+                  <h3 className="card-title2" style={{ color: plant.status === 'Ongoing' ? 'green' : 'gray' }}>{plant.pName}</h3>
+                  <hr />
                   <div className="d-flex">
-                    <p className="card-text me-3"><strong>Temperature:</strong> {plant.temp}</p>
-                    <p className="card-text me-3"><strong>Humidity:</strong> {plant.humidity}</p>
-                    <p className="card-text me-3"><strong>Days to Grow:</strong> {plant.daysToGrow}</p>
-                    <p className="card-text"><strong>Status:</strong> {plant.status}</p>
+                    <p className="card-text1 me-3"><strong>Temperature:</strong> {plant.temp}</p>
+                    <p className="card-text1 me-3"><strong>Humidity:</strong> {plant.humidity}</p>
+                    <p className="card-text1 me-3"><strong>Days to Grow:</strong> {plant.daysToGrow}</p>
+                    <p className="card-text1"><strong>Status:</strong> {plant.status}</p>
                   </div>
                 </div>
                 <button className="btn btn-danger" onClick={() => handleStop(plant.pid)}>Stop</button>

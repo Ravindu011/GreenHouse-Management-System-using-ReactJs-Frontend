@@ -35,7 +35,7 @@ export default function NavigationBar() {
       </Container>
     </Navbar> */}
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-success">
+<nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
               <div className="logo"></div>
@@ -55,6 +55,9 @@ export default function NavigationBar() {
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="addPlant">Add Plant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="userAct">User Activities</a>
                     </li>
                     {/* <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
