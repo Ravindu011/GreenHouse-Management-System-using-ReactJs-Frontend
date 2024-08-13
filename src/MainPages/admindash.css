@@ -1,0 +1,20 @@
+.c{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 255, 255);
+
+}
+.mainDiv{
+    flex: 8;
+    background-color: rgb(255, 255, 255);
+}
+.secondDiv{
+    flex: 4;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.033);
+    height: 90vh;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top-left-radius: 20px;  /* Top-left corner */
+  border-top-right-radius: 20px; /* Top-right corner */
+}

@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './onPlant.css';
 import NavigationBar from '../../Nav/NavigationBar';
+import { UserContext } from '../../../UserContext';
+import { logActivity } from '../../../LogActivity';
 
 export default function OngoingPlants() {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { username } = useContext(UserContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,23 +29,35 @@ export default function OngoingPlants() {
   }, []);
 
   const handleStop = async (id) => {
-
+    let pmname;
     try {
-      // await axios.put(`http://localhost:8080/setStandby/${id}`);
       await axios.put(`http://localhost:8080/moveToHistory/${id}`);
       await axios.delete(`http://localhost:8080/removeFromOngoing/${id}`);
-      // await axios.delete(`http://localhost:8080/deleteFromOnTemp/${id}`);
+      setPlants((prevPlants) =>
+        prevPlants.map((plant) =>
+          plant.pid === id ? { ...plant, status: 'Standby'} : plant
+        )
+        
+      );
+      logActivity(username, 'Removed ongoing plant'); 
+      handleSaveActivity();
+      const response = await axios.get("http://localhost:8080/getAllOnProduct");
+        setPlants(response.data);
 
-
-      setPlants((prevPlants) => prevPlants.map((plant) => 
-        plant.pid === id ? { ...plant, status: 'Standby' } : plant
-      ));
     } catch (error) {
       console.error('Failed to stop plant:', error);
       setError('Failed to stop plant. Please try again later.');
     }
   };
-  
+  const [message, setMessage] = useState('');
+
+  const handleSaveActivity = () => {
+    // Hardcoded message when button is clicked
+    setMessage('Activity saved!');
+
+    // Hide message after 3 seconds
+    setTimeout(() => setMessage(''), 3000);
+  };
 
   const handleDelete = async (id) => {
     console.log(`Deleting plant with ID: ${id}`); // Added for debugging
@@ -75,29 +92,38 @@ export default function OngoingPlants() {
   }
 
   return (
-      <div className="container mt-4">
+    <div className="container mt-4">
+      {message && (
+        <div className="message-box">{message}</div>
+      )}
       <div className="row">
         {plants.map((plant) => (
           <div key={plant.pid} className="col-md-12">
-            <div className="card mb-4">
+            <div className="cardOn mb-4">
               <div className="card-body d-flex justify-content-between align-items-center">
                 <div>
-                  <h2 className="card-title" style={{ color: plant.status === 'Ongoing' ? 'green' : 'black' }}>{plant.pName}</h2>
+                  <h3 className="card-title2" style={{ color: plant.status === 'Ongoing' ? 'green' : 'gray' }}>
+                    {plant.pName}
+                  </h3>
+                  <hr />
                   <div className="d-flex">
-                    <p className="card-text me-3"><strong>Temperature:</strong> {plant.temp}</p>
-                    <p className="card-text me-3"><strong>Humidity:</strong> {plant.humidity}</p>
-                    <p className="card-text me-3"><strong>Days to Grow:</strong> {plant.daysToGrow}</p>
-                    <p className="card-text"><strong>Status:</strong> {plant.status}</p>
+                    <p className="card-text1 me-3"><strong>Temperature:</strong> {plant.temp}</p>
+                    <p className="card-text1 me-3"><strong>Humidity:</strong> {plant.humidity}</p>
+                    <p className="card-text1 me-3"><strong>Days to Grow:</strong> {plant.daysToGrow}</p>
+                    <p className="card-text1"><strong>Status:</strong> {plant.status}</p>
                   </div>
                 </div>
-                <button className="btn btn-danger" onClick={() => handleStop(plant.pid)}>Stop</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleStop(plant.pid)}
+                >
+                  Stop
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-
-    
   );
 }

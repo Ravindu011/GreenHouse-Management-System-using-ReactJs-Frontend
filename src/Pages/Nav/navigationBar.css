@@ -1,6 +1,8 @@
 .logo {
     width: 50px;
     height: 50px;
+    margin-top: 5px;
+    margin-left: 10px;
     background-image: url("C:\Users\user\Documents\GitHub\GreenHouse-Management-System-using-ReactJs-Frontend\src\Pages\Images\A+logo.png");
     margin-bottom: 10px;
     
@@ -17,12 +19,19 @@
 }
 
 .nav-link:hover {
-    background-color: #218838;
+    background-color: #29adff;
     color: #fff !important;
+    border-radius: 50px;
+    border: 2px solid #ffffff; /* 3px thickness and orange color */
+
 }
 
 .dropdown-menu {
-    background-color: #22bb33;
+    background-color: #29adff;
+    border-radius: 50px;
+    border: 3px solid #ffffff; /* 3px thickness and orange color */
+
+
 }
 
 .navbar-toggler {
@@ -34,10 +43,22 @@
 }
 
 .dropdown-item:hover{
-    background-color: #218838;
+    background-color: #29adff;
+    border-radius: 20px;
+
 }
 
 .navbar-brand{
     margin-right: 3%;
+}
+.navbar{
+    background-color: #319bff;
+    border-radius: 50px;
+    height: 70px;
+    margin-top: 5px;
+    padding-left: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
 }
 

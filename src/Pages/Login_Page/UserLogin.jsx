@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import './login_page.css'; // Import your CSS file for styling
+// src/components/UserLogin.js
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { UserContext } from '../../UserContext';
 const UserLogin = () => {
+  const { setUsername } = useContext(UserContext);
   let navigate = useNavigate();
 
   const [user, setUser] = useState({
@@ -27,7 +28,10 @@ const UserLogin = () => {
     } else {
       try {
         const response = await axios.post("http://localhost:8080/userlogin", user);
-        if (response.data === "Successful User Login") {
+        if (response.data.message.startsWith('Welcome')) {
+          const username = response.data.message.split(', ')[1];
+          setUsername(username);
+          localStorage.setItem(username, 'Logged IN'); // Save username to localStorage
           navigate("/UserDashboard");
         } else {
           setError('Invalid email or password');

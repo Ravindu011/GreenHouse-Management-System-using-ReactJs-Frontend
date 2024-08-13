@@ -1,0 +1,30 @@
+.user-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .dashboard-content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .main-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between components */
+  }
+  
+  .sidebar {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  h3 {
+    margin-top: 0;
+  }
+  
+  /* Additional styles */
+  

@@ -67,13 +67,14 @@ const LedControl = () => {
     : 'black';
 
   return (
-    <div>
-      <h1>LED Control</h1>
-      <div>
-        <h2>Current Temperature: {currentTemp}</h2>
-        <h2 style={{ color: needTempColor }}>Need Temperature: {enteredTemp}</h2>
+    <div className='maincontainer'>
+      <div className='boolcontainer'>
+        <center><h3 style={{ color: needTempColor }}>Current Temperature </h3></center>
+        <center><h2 style={{ color: needTempColor }}>{currentTemp} °C</h2></center>
+        <center><h3 >Need Temperature </h3></center>
+        <center><h2>{enteredTemp} °C</h2></center>
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>
+      <div className='boolcontainer2' style={{ display: 'flex', alignItems: 'center'}}>
         <span>Enable Manual Control:</span>
         <Switch
           onChange={handleManualControl}
@@ -88,16 +89,22 @@ const LedControl = () => {
           height={20}
           width={48}
         />
+
       </div>
+      <div className="boolcontainer3">
+        
       {manualControl && (
         <button
           onClick={toggleLed}
-          className={ledState ? 'on' : 'off'}
+          className={`${ledState ? 'on' : 'off'} custom-button1`}
+          style={{ width: '100%', height: '100%'}}
         >
-          <FontAwesomeIcon icon={faFan} size="3x" style={{ color: 'white' }} />
+          <FontAwesomeIcon icon={faFan} size="5x"  />
           <div>{ledState ? 'ON' : 'OFF'}</div>
         </button>
       )}
+      </div>
+
     </div>
   );
 };

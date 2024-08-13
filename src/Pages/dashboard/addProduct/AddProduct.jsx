@@ -1,10 +1,16 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './addproduct.css'
+import { UserContext } from '../../../UserContext'
+import { logActivity } from '../../../LogActivity';
+
 
 export default function AddProduct() {
   let navigate = useNavigate()
+
+  const { username } = useContext(UserContext); 
+
 
   const [user, setUser] = useState({
     name: "",
@@ -43,6 +49,8 @@ export default function AddProduct() {
       });
       setValue('');
       setError('');
+      logActivity(username, 'Plant added'); 
+
 
     }
   }
