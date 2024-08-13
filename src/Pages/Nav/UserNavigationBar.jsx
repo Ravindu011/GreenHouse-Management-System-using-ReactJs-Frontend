@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { UserContext } from '../../UserContext';
 import './navigationBar.css';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 export default function UserNavigationBar() {
   const { username } = useContext(UserContext); // Access username from context
@@ -27,10 +29,17 @@ export default function UserNavigationBar() {
             <li className="nav-item">
               <a className="nav-link" href="/UserAddPlants">Add Plant</a>
             </li>
+            <NavDropdown title="Notes" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <NavDropdown.Item class="dropdown-item" href="UserNoteBook">Add Note</NavDropdown.Item>
+                  <NavDropdown.Item class="dropdown-item" href="UserViewNote">View Notes</NavDropdown.Item>
+                </li>
+                            
+            </NavDropdown>
           </ul>
         </div>
         <div className="ms-auto">
-          {username && <span className="navbar-text text-white me-3">Worker: {username}</span>}
+          {username && <span className="navbar-text text-white me-3">User: {username}</span>}
           <a className="navbar-brand" href="/">  Log Out</a>
         </div>
       </div>

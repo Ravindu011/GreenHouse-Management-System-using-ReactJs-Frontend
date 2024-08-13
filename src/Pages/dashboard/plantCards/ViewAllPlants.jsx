@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react'; // Import useContext here
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './ViewPlants.css';
@@ -9,6 +9,8 @@ export default function PlantCards() {
   const [plants, setPlants] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const { username } = useContext(UserContext); // Accessing username from UserContext
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +35,7 @@ export default function PlantCards() {
   
     try {
       await axios.delete(`http://localhost:8080/removePlant/${id}`);
-      logActivity('Admin','Deleted Plant');
+      logActivity(username, 'Deleted Plant');
       setPlants((prevPlants) => prevPlants.filter((plant) => plant.pid !== id));
       
     } catch (error) {
@@ -42,21 +44,16 @@ export default function PlantCards() {
   };
 
   const handleMakeOngoing = async (id) => {
-    // await axios.put(`http://localhost:8080/storePlantTemp/${id}`);
-
     try {
-
-      // Update plant status to "Ongoing"
       await axios.put(`http://localhost:8080/setOngoing/${id}`, { status: 'Ongoing' });
   
-      // Move plant data to another table
-  
-      // Update the plants state to reflect the status change
       setPlants((prevPlants) =>
         prevPlants.map((plant) =>
           plant.pid === id ? { ...plant, status: 'Ongoing' } : plant
         )
       );
+      logActivity(username, 'Add ongoing plant');
+
     } catch (error) {
       console.error('Failed to update plant status or move data:', error);
     }

@@ -1,4 +1,4 @@
-import React from 'react'
+import {React,useContext} from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,34 +7,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import axios from 'axios';
 import './navigationBar.css'
+import { UserContext } from '../../UserContext';
 
 
 export default function NavigationBar() {
+  const { username } = useContext(UserContext);
   return (
     <>
-         {/* <Navbar expand="lg" className="bg-body-tertiary">
-      <Container fluid>
-        <Navbar.Brand href="#">GreenHouse Admin</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="item"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="AdminDashboard">Dashboard</Nav.Link>
-            <Nav.Link href="ViewAllPlants">View Plants</Nav.Link>
-            <Nav.Link href="addPlant">Add Plant</Nav.Link>
-            <NavDropdown title="User Control" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="RegisterUser">Register New User</NavDropdown.Item>
-              <NavDropdown.Item href="viewUsers">View Users</NavDropdown.Item>
-            </NavDropdown>
-          
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar> */}
-
+         
 <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -59,6 +39,7 @@ export default function NavigationBar() {
                     <li class="nav-item">
                         <a class="nav-link" href="userAct">User Activities</a>
                     </li>
+                  
                     {/* <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
                             User Control
@@ -71,10 +52,20 @@ export default function NavigationBar() {
                             
                         </NavDropdown>
                     {/* </li> */}
+                    <NavDropdown title="Notes" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li>
+                          <NavDropdown.Item class="dropdown-item" href="noteBook">Add Note</NavDropdown.Item>
+                          <NavDropdown.Item class="dropdown-item" href="NoteList">View Notes</NavDropdown.Item>
+                          </li>
+                            
+                        </NavDropdown>
                 </ul>
             </div>
 
-            <a class="navbar-brand" href="/">Log Out</a>
+        <div className="ms-auto">
+          {username && <span className="navbar-text text-white me-3">Admin: {username}</span>}
+          <a className="navbar-brand" href="/">  Log Out</a>
+        </div>
             
         </div>
     </nav>

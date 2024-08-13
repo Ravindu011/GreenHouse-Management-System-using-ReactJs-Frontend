@@ -6,7 +6,6 @@ import { database } from '../firebaseConfig';
 import { ref, onValue } from 'firebase/database';
 import './ledControl.css';
 
-
 const TemperatureHumidity = () => {
   const [temperature, setTemperature] = useState(null);
   const [humidity, setHumidity] = useState(null);
@@ -17,12 +16,18 @@ const TemperatureHumidity = () => {
 
     const unsubscribeTemp = onValue(tempRef, (snapshot) => {
       const temp = snapshot.val();
+      console.log('Temperature:', temp); // Debugging line
       setTemperature(temp);
+    }, (error) => {
+      console.error('Error fetching temperature data:', error);
     });
 
     const unsubscribeHumidity = onValue(humidityRef, (snapshot) => {
       const hum = snapshot.val();
+      console.log('Humidity:', hum); // Debugging line
       setHumidity(hum);
+    }, (error) => {
+      console.error('Error fetching humidity data:', error);
     });
 
     // Cleanup subscriptions on unmount
@@ -47,9 +52,7 @@ const TemperatureHumidity = () => {
               needleColor="#345243"
               colors={['#5FD8FF', '#FFC371']}
               formatTextValue={() => `${temperature}`}
-
             />
-            
           ) : (
             <p>Loading...</p>
           )}
@@ -65,13 +68,11 @@ const TemperatureHumidity = () => {
               needleColor="#345243"
               colors={['#5F6AFF', '#71FFB8']}
               formatTextValue={() => `${humidity}`}
-
             />
           ) : (
             <p>Loading...</p>
           )}
           <center><h3>Humidity</h3></center>
-
         </div>
       </div>
     </div>

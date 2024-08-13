@@ -70,9 +70,9 @@ const LedControl = () => {
     <div className='maincontainer'>
       <div className='boolcontainer'>
         <center><h3 style={{ color: needTempColor }}>Current Temperature </h3></center>
-        <center><h2 style={{ color: needTempColor }}>{currentTemp}</h2></center>
+        <center><h2 style={{ color: needTempColor }}>{currentTemp} °C</h2></center>
         <center><h3 >Need Temperature </h3></center>
-        <center><h2>{enteredTemp}</h2></center>
+        <center><h2>{enteredTemp} °C</h2></center>
       </div>
       <div className='boolcontainer2' style={{ display: 'flex', alignItems: 'center'}}>
         <span>Enable Manual Control:</span>

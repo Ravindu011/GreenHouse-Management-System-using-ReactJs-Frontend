@@ -12,6 +12,10 @@ import UserAddPlants from './MainPages/UserPart/UserAddPlants';
 import UserViewPlants from './MainPages/UserPart/UserViewPlants';
 import { UserContext } from './UserContext';
 import UserActivities from './MainPages/ActivityView';
+import NoteBook from './MainPages/NoteBook';
+import NoteList from './MainPages/NoteList';
+import UserNoteBook from './MainPages/Usernotebook';
+import UserViewNote from './MainPages/UserViewNote';
 
 
 
@@ -30,6 +34,15 @@ const App = () => {
         <Route path="UserAddPlants" element={<UserAddPlants />} />
         <Route path="UserViewPlants" element={<UserViewPlants />} />
         <Route path="userAct" element={<UserActivities/>} />
+        <Route path="noteBook" element={<NoteBook/>} />
+        <Route path="NoteList" element={<NoteList/>} />
+        <Route path="UserNoteBook" element={<UserNoteBook/>} />
+        <Route path="UserViewNote" element={<UserViewNote/>} />
+
+
+
+
+
 
       </Routes>
     </BrowserRouter>

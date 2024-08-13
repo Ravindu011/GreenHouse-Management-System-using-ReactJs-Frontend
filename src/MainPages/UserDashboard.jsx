@@ -12,19 +12,18 @@ export default function UserDashboard() {
   return (
     <div className="user-dashboard">
       <UserNavigationBar />
-      <div className="dashboard-content">
-        <div className="main-content">
-          <TemperatureHumidity />
-          <LedControl />
+      <div className="c">
+        <div className="mainDiv">
+          <TemperatureHumidity/>
+          <LedControl/>
         </div>
-        <div className="sidebar">
+        <div className="secondDiv">
           <h3>Ongoing Plants</h3>
           <hr />
-          <OngoingPlants />
+          <OngoingPlants/>
+        
+
         </div>
-      </div>
-      <div className="username-display">
-        <h2>Welcome, {username}!</h2>
       </div>
     </div>
   );
